@@ -1,0 +1,25 @@
+{
+	"color": "#ffc91ae2",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1697293398.json",
+	"mirror_portraits": false,
+	"name": "Monster",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -26,
+	"offset_y": -15,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://asset/actor/monster/monster_1.png"
+		},
+		{
+			"name": "stage2",
+			"path": "res://asset/actor/monster/monster_2.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

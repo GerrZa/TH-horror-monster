@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2mate.com - Goofy sound effects.mp3-a1eba36bbe0583056e27b84034a0b72e.mp3str"
+
+[deps]
+
+source_file="res://asset/sfx/y2mate.com - Goofy sound effects.mp3"
+dest_files=[ "res://.import/y2mate.com - Goofy sound effects.mp3-a1eba36bbe0583056e27b84034a0b72e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

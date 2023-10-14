@@ -1,0 +1,21 @@
+{
+	"color": "#ff354bf8",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1697293893.json",
+	"mirror_portraits": false,
+	"name": "man",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -26,
+	"offset_y": -15,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://asset/actor/npc/npc_1.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

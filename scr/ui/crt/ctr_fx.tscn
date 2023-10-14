@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scr/ui/crt/ctr_effect.gd" type="Script" id=1]
+[ext_resource path="res://scr/ui/crt/ctr_effect.gdshader" type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/res = Vector2( 640, 500 )
+shader_param/mask_type = 0
+shader_param/bloom_type = 0
+shader_param/hardScan = -12.0
+shader_param/hardPix = -4.0
+shader_param/hardBloomScan = -1.688
+shader_param/hardBloomPix = -1.505
+shader_param/bloomAmount = 6.917
+shader_param/warp = Vector2( 10, 10 )
+shader_param/maskDark = 0.261
+shader_param/maskLight = 1.486
+
+[node name="crt_fx" type="ColorRect"]
+material = SubResource( 2 )
+margin_right = 320.0
+margin_bottom = 250.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
