@@ -1,0 +1,53 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello, Player!"
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "My job today is to introduce you about the puzzle solving program!"
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Which is the one you're standing right now!"
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sooooo, basicly, you have to solve [rainbow freq=1.2 sat=1 val=1] 9 puzzles. [/rainbow] And the last one will give you an exit key!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1697373676.json",
+		"name": "greet"
+	}
+}

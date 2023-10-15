@@ -1,0 +1,59 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The monster will walk pass this hall in the nearly stable rate, "
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "and the dice shows the speed level of the monster."
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It will random everytime monster walk pass through this hall."
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hide from him, don't let he sees you. He is no joke"
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But somehow he is really cute tho hahaha."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1697376953.json",
+		"name": "monsterex"
+	}
+}

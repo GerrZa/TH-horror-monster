@@ -1,0 +1,89 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": ".........."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..................................."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This \"NPC\" is dead."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "..."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So why didn't you die too?"
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh. Almost forgot."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This game is permadeath..."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This mean you have to restart from the beginning everytime you die."
+		},
+		{
+			"character": "character-1697293398.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Goodluck! <3"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "timeline-1697379239.json",
+		"name": "first_monster"
+	}
+}

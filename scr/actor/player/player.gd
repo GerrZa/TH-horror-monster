@@ -36,3 +36,8 @@ func stop_action():
 	animtree.get("parameters/playback").travel("idle")
 	
 	set_physics_process(false)
+
+func con_action():
+	
+	set_physics_process(true)
+	

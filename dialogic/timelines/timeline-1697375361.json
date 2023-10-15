@@ -5,32 +5,6 @@
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
-			"character": "character-1697293398.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": true,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 0,
-			"z_index": 0
-		},
-		{
-			"character": "character-1697293398.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "Good"
-		},
-		{
-			"animation": "instant_in.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
 			"character": "character-1697293893.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
@@ -50,12 +24,30 @@
 			"character": "character-1697293893.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Not that good"
+			"text": "Oh! You see that on the right bottom?"
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That one is the monster's dice!"
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It indicate how fast the monster is."
+		},
+		{
+			"character": "character-1697293893.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh I fogot to mention about the [shake rate = 10 level = 3] monster[/shake] right? [br]my bad."
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.5",
-		"file": "timeline-1697293409.json",
-		"name": "timeline-1697293409.json"
+		"file": "timeline-1697375361.json",
+		"name": "ohmonster"
 	}
 }
