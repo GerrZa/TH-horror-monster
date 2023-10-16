@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://asset/actor/npc/npc.png" type="Texture" id=1]
+[ext_resource path="res://scr/obj/puzzle1/npc_body.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1, 4 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.5, 1 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -3, -2, -4, -1, -4, 0, -3, 1, 4, 1, 5, 0, 5, -1, 4, -2 )
+
+[node name="npc_body" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 1, -10 )
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="check_r" type="Area2D" parent="."]
+position = Vector2( 1, 0 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_r"]
+position = Vector2( 6, 0 )
+shape = SubResource( 3 )
+
+[node name="check_l" type="Area2D" parent="."]
+position = Vector2( -1, 0 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_l"]
+position = Vector2( -5, 0 )
+shape = SubResource( 2 )
+
+[node name="check_u" type="Area2D" parent="."]
+position = Vector2( 0, -5 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_u"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 4 )
+
+[node name="check_d" type="Area2D" parent="."]
+position = Vector2( 0, 5 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check_d"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 5 )

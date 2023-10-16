@@ -27,6 +27,7 @@ func _physics_process(delta):
 	else:
 		animtree.get("parameters/playback").travel("idle")
 	
+	
 
 func _exit_tree():
 	Global.player = null

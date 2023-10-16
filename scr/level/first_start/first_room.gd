@@ -2,6 +2,7 @@ extends Node2D
 
 
 func run_cutscene():
+	Global.is_first_scene = true
 	Global.monster.will_chase = false
 	Global.player.stop_action()
 	Global.current_monster_stage = 0

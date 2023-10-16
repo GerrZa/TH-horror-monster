@@ -81,7 +81,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Th-horror-monster"
-run/main_scene="res://scr/level/first_start/first_room.tscn"
+run/main_scene="res://scr/level/main_room/main_room.tscn"
 config/icon="res://icon.png"
 
 [autoload]
