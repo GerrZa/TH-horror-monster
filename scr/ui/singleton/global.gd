@@ -30,13 +30,13 @@ func _physics_process(delta):
 	
 	if is_first_scene == false:
 		if scene_time < 4 * 60:
-			current_monster_stage = 2
+			current_monster_stage = 1
 		else:
-			current_monster_stage = 3
+			current_monster_stage = 2
 
 func nextpuzzle():
 	current_puzzle += 1
 	if current_puzzle < 9:
 		get_tree().current_scene.get_node("puzzle" + String(current_puzzle)).queue_free()
-		get_tree().current_scene.add_child(get("puzzle" + String(current_puzzle)).instance())
+		get_tree().current_scene.add_dchild(get("puzzle" + String(current_puzzle)).instance())
 		

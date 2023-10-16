@@ -7,4 +7,4 @@ export(Array, int) var valid_code
 var current_code
 
 func add_number(number):
-	
+	pass

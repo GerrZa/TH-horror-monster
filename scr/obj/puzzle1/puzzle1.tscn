@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scr/obj/puzzle1/basicpuzzle.gd" type="Script" id=1]
+[ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=2]
 [ext_resource path="res://scr/obj/prop/regular_box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scr/obj/puzzle1/npc_body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scr/obj/prop/tall_box.tscn" type="PackedScene" id=5]
@@ -9,17 +10,24 @@
 [node name="puzzle1" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="grave" parent="." instance=ExtResource( 6 )]
 position = Vector2( 87, 109 )
 
 [node name="npc_body" parent="." instance=ExtResource( 4 )]
-position = Vector2( 152, 178 )
+position = Vector2( 152, 183 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 147, 123 )
+position = Vector2( 147, 149 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 186, 134 )
+position = Vector2( 186, 156 )
 
 [node name="StaticBody2D3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 169, 84 )

@@ -269,6 +269,7 @@ script = ExtResource( 7 )
 
 [node name="crt_fx" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
+hide = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 0
@@ -353,6 +354,7 @@ anims/normal = SubResource( 17 )
 visible = false
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 4 )
+hide = true
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 153, 217 )
