@@ -40,7 +40,10 @@ func on_finish_walk():
 	
 	randomize()
 	
-	yield(get_tree().create_timer(rand_range(20,23)),"timeout")
+	if Global.current_monster_stage == 1:
+		yield(get_tree().create_timer(rand_range(20,23)),"timeout")
+	elif Global.current_monster_stage == 2:
+		yield(get_tree().create_timer(rand_range(10,15)),"timeout")
 #	yield(get_tree().create_timer(10),"timeout") ###FOR RECORDING###
 	
 	monster_walk()

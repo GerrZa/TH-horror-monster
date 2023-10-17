@@ -4,7 +4,7 @@ extends ColorRect
 export var hide := false
 
 func _ready():
-	Global.ctr_fx
+	Global.ctr_fx = self
 
 func _process(delta):
 	if hide:

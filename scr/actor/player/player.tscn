@@ -234,7 +234,6 @@ position = Vector2( -6, -17 )
 texture = ExtResource( 1 )
 centered = false
 hframes = 18
-frame = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 root_node = NodePath("../..")

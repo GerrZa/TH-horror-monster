@@ -1,0 +1,136 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scr/obj/puzzle1/basicpuzzle.gd" type="Script" id=1]
+[ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=2]
+[ext_resource path="res://asset/obj/puzzle/code_number/dithering_dim.png" type="Texture" id=3]
+[ext_resource path="res://asset/obj/puzzle/puzzle2/enter_code.png" type="Texture" id=4]
+[ext_resource path="res://scr/ui/number_receive/number_receive.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asset/obj/puzzle/code_number/code_number-sheet.png" type="Texture" id=6]
+[ext_resource path="res://asset/obj/puzzle/puzzle2/picture_order.png" type="Texture" id=7]
+[ext_resource path="res://scr/obj/puzzle2/picture.gd" type="Script" id=8]
+[ext_resource path="res://scr/obj/panel_activator.gd" type="Script" id=9]
+[ext_resource path="res://scr/obj/puzzle2/code_reciever.gd" type="Script" id=10]
+[ext_resource path="res://asset/obj/puzzle/puzzle2/comic_book.png" type="Texture" id=11]
+[ext_resource path="res://scr/obj/prop/tall_box.tscn" type="PackedScene" id=12]
+[ext_resource path="res://asset/obj/puzzle/puzzle2/code_reciever.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.5, 9 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 4 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -6, -5, -6, 3, 6, 3, 6, -5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 5.5 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( -10, -7, -10, 4, 10, 4, 10, -7 )
+
+[node name="puzzle2" type="Node2D"]
+script = ExtResource( 1 )
+puzzle_num = 2
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="code_reciever" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource( 10 )
+
+[node name="dim" type="Sprite" parent="code_reciever"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="EnterCode" type="Sprite" parent="code_reciever"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="number_receiver" parent="code_reciever" instance=ExtResource( 5 )]
+position = Vector2( 104, 130 )
+valid_code = [ 4, 6, 2, 5, 1, 3 ]
+spr_gap = 20
+numbersheet = ExtResource( 6 )
+
+[node name="picture" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource( 8 )
+
+[node name="dim" type="Sprite" parent="picture"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="picture"]
+texture = ExtResource( 7 )
+centered = false
+hframes = 6
+
+[node name="picture_activator" type="Area2D" parent="."]
+position = Vector2( 94, 113 )
+collision_layer = 0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+target = NodePath("../picture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="picture_activator"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="ComicBook" type="Sprite" parent="picture_activator"]
+light_mask = 2
+position = Vector2( -9, -20 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="picture_activator"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="picture_activator/StaticBody2D"]
+position = Vector2( 0, -1 )
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="picture_activator"]
+occluder = SubResource( 3 )
+
+[node name="code_receiever" type="Area2D" parent="."]
+position = Vector2( 186, 91 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+target = NodePath("../code_reciever")
+
+[node name="CodeReciever" type="Sprite" parent="code_receiever"]
+light_mask = 2
+position = Vector2( 0, -8 )
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="code_receiever"]
+position = Vector2( 0, 4.5 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="code_receiever"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="code_receiever/StaticBody2D"]
+position = Vector2( 0, -1.5 )
+shape = SubResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="code_receiever"]
+occluder = SubResource( 6 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 171, 161 )

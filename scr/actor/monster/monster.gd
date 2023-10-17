@@ -43,10 +43,10 @@ func _physics_process(delta):
 	$RayCast2D.cast_to = Vector2(global_position.distance_to(Global.player.global_position) + 10,0)
 	$RayCast2D.look_at(Global.player.global_position)
 	
-	var dim_energy = 0.45
+	var dim_energy = 0.55
 	var target_energy
 	
-	var close_range = 100
+	var close_range = 130
 	
 	if global_position.distance_to(Global.player.global_position) <= close_range:
 		target_energy = dim_energy
@@ -56,7 +56,7 @@ func _physics_process(delta):
 	if light_when_found:
 		$dim_light.energy = lerp($dim_light.energy,target_energy,0.05)
 	
-	if $RayCast2D.get_collider() == Global.player and found == false and will_chase:
+	if $RayCast2D.get_collider() == Global.player and $can_see.get_overlapping_bodies().empty() == false and found == false and will_chase:
 		start_kill()
 	
 	if $player_killer.get_overlapping_bodies().empty() == false:
