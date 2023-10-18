@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=1]
 [ext_resource path="res://scr/ui/crt/ctr_fx.tscn" type="PackedScene" id=2]
@@ -18,9 +18,14 @@
 [ext_resource path="res://asset/ui/dice/dice.png" type="Texture" id=16]
 [ext_resource path="res://scr/actor/player/Light2D.gd" type="Script" id=17]
 [ext_resource path="res://scr/level/main_room/dice.gd" type="Script" id=18]
+[ext_resource path="res://asset/ui/Mystery Font (1).ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://scr/level/main_room/puzzle_indicator.gd" type="Script" id=20]
 [ext_resource path="res://scr/ui/stage_indicator.gd" type="Script" id=21]
 [ext_resource path="res://asset/sfx/roll.wav" type="AudioStream" id=22]
 [ext_resource path="res://asset/ui/mad_icon.png" type="Texture" id=23]
+[ext_resource path="res://scr/level/main_room/time_indicator.gd" type="Script" id=24]
+[ext_resource path="res://scr/level/main_room/success_player.gd" type="Script" id=25]
+[ext_resource path="res://asset/sfx/success.wav" type="AudioStream" id=26]
 
 [sub_resource type="Animation" id=40]
 length = 0.001
@@ -98,6 +103,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [ false, true, false, true ]
 }
+
+[sub_resource type="DynamicFont" id=49]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 8
+font_data = ExtResource( 19 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( 17, 32, 17, 124, 113, 124, 113, 228, 196, 228, 196, 124, 295, 124, 295, 32, 18, 32, -16, -17, 367, -15, 370, 152, 277, 164, 297, 276, 22, 262, 35, 187, -52, 156, -15, -18 )
@@ -260,7 +272,7 @@ tracks/1/keys = {
 extents = Vector2( 16, 7 )
 
 [sub_resource type="CircleShape2D" id=48]
-radius = 73.1095
+radius = 136.004
 
 [sub_resource type="Animation" id=47]
 resource_name = "cutscene1"
@@ -305,17 +317,41 @@ anims/blink_on = SubResource( 44 )
 stream = ExtResource( 22 )
 volume_db = -5.0
 
-[node name="stage_indicator2" type="Node2D" parent="CanvasLayer2"]
+[node name="stage_indicator" type="Node2D" parent="CanvasLayer2"]
 position = Vector2( 16, 218 )
 script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer2/stage_indicator2"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer2/stage_indicator"]
 texture = ExtResource( 23 )
 centered = false
 hframes = 2
+
+[node name="puzzle_indicator" type="Node2D" parent="CanvasLayer2"]
+position = Vector2( 52, 216 )
+script = ExtResource( 20 )
+
+[node name="Label" type="Label" parent="CanvasLayer2/puzzle_indicator"]
+margin_left = -6.0
+margin_top = 9.0
+margin_right = 34.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 49 )
+text = "0/9"
+align = 2
+
+[node name="time_indicator" type="Node2D" parent="CanvasLayer2"]
+script = ExtResource( 24 )
+
+[node name="Label" type="Label" parent="CanvasLayer2/time_indicator"]
+margin_left = 18.0
+margin_top = 14.0
+margin_right = 58.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 50 )
+text = "1000"
 
 [node name="room" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -468,5 +504,11 @@ anims/cutscene1 = SubResource( 47 )
 
 [node name="puzzle1" parent="." instance=ExtResource( 13 )]
 visible = false
+
+[node name="success_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -15.0
+bus = "reverb_bus"
+script = ExtResource( 25 )
 
 [connection signal="finished" from="monster_rel/monster/walking_sound" to="monster_rel/monster" method="_on_walking_sound_finished"]

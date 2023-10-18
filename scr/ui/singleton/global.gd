@@ -14,6 +14,14 @@ var is_first_scene = false
 var current_puzzle = 1
 
 var puzzle2 = preload("res://scr/obj/puzzle2/puzzle2.tscn")
+var puzzle3 = preload("res://scr/obj/puzzle3/puzzle3.tscn")
+var puzzle4 = preload("res://scr/obj/puzzle4/puzzle4.tscn")
+var puzzle5 = preload("res://scr/obj/puzzle5/puzzle5.tscn")
+var puzzle6 = preload("res://scr/obj/puzzle6/puzzle6.tscn")
+
+signal get_caught
+
+var success_player = null
 
 func change_to_dead():
 	get_tree().change_scene("res://scr/ui/dead_scene/dead_scene.tscn")
@@ -33,10 +41,16 @@ func _physics_process(delta):
 			current_monster_stage = 1
 		else:
 			current_monster_stage = 2
+	
+	if scene_time > 7*60 and monster.found == false:
+		monster.base_kill()
 
 func _input(event):
-	if Input.is_key_pressed(KEY_BACKSLASH):
-		nextpuzzle()
+#	if Input.is_key_pressed(KEY_BACKSLASH):
+#		scene_time += 3*60
+#	if Input.is_key_pressed(KEY_BACKSLASH):
+#		nextpuzzle()
+	pass
 
 func nextpuzzle():
 	current_puzzle += 1
@@ -50,3 +64,7 @@ func nextpuzzle():
 		
 		get_tree().current_scene.add_child(get("puzzle" + String(current_puzzle)).instance())
 		
+
+func win():
+	get_tree().change_scene("res://scr/level/credit/credit.tscn")
+	pass

@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+export var max_frame : int
+
 var current_pic = 0
 
 func _ready():
@@ -8,7 +10,7 @@ func _ready():
 func _input(event):
 	if visible:
 		if Input.is_action_just_pressed("ui_right"):
-			if current_pic < 5:
+			if current_pic < max_frame:
 				current_pic += 1
 				update_pic()
 		elif Input.is_action_just_pressed("ui_left"):

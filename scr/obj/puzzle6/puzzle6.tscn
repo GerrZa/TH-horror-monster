@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scr/obj/puzzle1/basicpuzzle.gd" type="Script" id=1]
+[ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=2]
+[ext_resource path="res://asset/obj/puzzle/puzzle6/key.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/Mystery Font (1).ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scr/obj/puzzle6/door.gd" type="Script" id=5]
+[ext_resource path="res://scr/obj/prop/regular_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scr/obj/prop/tall_box.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="puzzle6" type="Node2D"]
+script = ExtResource( 1 )
+puzzle_num = 6
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 269, 8 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 235.0
+margin_top = 10.0
+margin_right = 275.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "Lshift - "
+
+[node name="door" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2( 201, 194 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 136, 159 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 178, 222 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 206, 94 )
+
+[node name="StaticBody2D" parent="StaticBody2D2" instance=ExtResource( 7 )]
+position = Vector2( -92, 3 )
+
+[node name="StaticBody2D3" parent="StaticBody2D2" instance=ExtResource( 7 )]
+position = Vector2( -20, 83 )

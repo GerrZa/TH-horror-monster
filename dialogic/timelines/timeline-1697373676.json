@@ -30,7 +30,7 @@
 			"character": "character-1697293893.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "My job today is to introduce you about the puzzle solving program!"
+			"text": "My job today is to introduce you about the arcade program!"
 		},
 		{
 			"character": "character-1697293893.json",
@@ -42,7 +42,7 @@
 			"character": "character-1697293893.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Sooooo, basicly, you have to solve [rainbow freq=1.2 sat=1 val=1] 9 puzzles. [/rainbow] And the last one will give you an exit key!"
+			"text": "Sooooo, basicly, you have to complete [rainbow freq=1.2 sat=1 val=1] 6 minigames. [/rainbow] And the last one will give you an exit key!"
 		}
 	],
 	"metadata": {

@@ -30,6 +30,7 @@ func run_cutscene():
 	yield(dialog3,"timeline_end")
 	
 	print("dfhjlksf")
+	$AudioStreamPlayer.stop()
 	$AnimationPlayer.play("lightflick")
 	
 	Global.monster.stop_anim()

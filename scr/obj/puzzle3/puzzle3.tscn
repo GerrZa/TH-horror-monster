@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scr/obj/puzzle1/basicpuzzle.gd" type="Script" id=1]
+[ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=2]
+[ext_resource path="res://asset/obj/puzzle/code_number/dithering_dim.png" type="Texture" id=3]
+[ext_resource path="res://asset/obj/puzzle/puzzle3/alphabet_code.png" type="Texture" id=4]
+[ext_resource path="res://scr/ui/number_receive/number_receive.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asset/obj/puzzle/code_number/code_number-sheet.png" type="Texture" id=6]
+[ext_resource path="res://scr/obj/prop/regular_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scr/obj/panel_activator.gd" type="Script" id=9]
+[ext_resource path="res://scr/obj/puzzle2/code_reciever.gd" type="Script" id=10]
+[ext_resource path="res://scr/obj/prop/tall_box.tscn" type="PackedScene" id=12]
+[ext_resource path="res://asset/obj/puzzle/puzzle3/alphabet_board.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25, 1 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 26, 5 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( -26, 2, -26, 12, 26, 12, 26, 2 )
+
+[node name="puzzle3" type="Node2D"]
+script = ExtResource( 1 )
+puzzle_num = 3
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alphabet_receiever" type="CanvasLayer" parent="."]
+layer = 0
+script = ExtResource( 10 )
+
+[node name="dim" type="Sprite" parent="alphabet_receiever"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="EnterCode" type="Sprite" parent="alphabet_receiever"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="number_receiver" parent="alphabet_receiever" instance=ExtResource( 5 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 242, 132 )
+valid_code = [ 0, 5 ]
+spr_gap = 9
+numbersheet = ExtResource( 6 )
+
+[node name="alphabet_board" type="Area2D" parent="."]
+position = Vector2( 106, 81 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+target = NodePath("../alphabet_receiever")
+
+[node name="CodeReciever" type="Sprite" parent="alphabet_board"]
+light_mask = 2
+position = Vector2( 0, -8 )
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alphabet_board"]
+position = Vector2( 0, 12 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="alphabet_board"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alphabet_board/StaticBody2D"]
+position = Vector2( 0, 7 )
+shape = SubResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="alphabet_board"]
+occluder = SubResource( 6 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 198, 111 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 163, 143 )
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 134, 179 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 146, 97 )
