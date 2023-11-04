@@ -46,7 +46,7 @@ func _physics_process(delta):
 	var dim_energy = 0.55
 	var target_energy
 	
-	var close_range = 130
+	var close_range = 100
 	
 	if global_position.distance_to(Global.player.global_position) <= close_range:
 		target_energy = dim_energy
@@ -65,6 +65,7 @@ func _physics_process(delta):
 func start_kill():
 	found = true
 	walking = false
+	Global.emit_signal("get_caught")
 	if light_when_found:
 		$Light2D/AnimationPlayer.play("rise")
 	$Sprite/AnimationPlayer.stop()

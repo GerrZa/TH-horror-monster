@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/song_readjusted.wav-a9cfe45d508eb6ea10b226038e317c6d.sample"
+
+[deps]
+
+source_file="res://asset/sfx/song_readjusted.wav"
+dest_files=[ "res://.import/song_readjusted.wav-a9cfe45d508eb6ea10b226038e317c6d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -37,10 +37,10 @@ func add_number(number):
 
 
 func check_code():
-	for item in valid_code:
-		if !current_code.has(item): return false
-		if current_code.count(item) != valid_code.count(item): return false
-	return true
+	if current_code == valid_code:
+		return true
+	else:
+		return false
 	
 
 func final_return(check_result):
@@ -74,6 +74,7 @@ func final_return(check_result):
 		yield(get_tree().create_timer(0.3),"timeout")
 		
 		emit_signal("success")
+		Global.player.con_action()
 	else:
 		is_playing_result = true
 		
@@ -108,6 +109,7 @@ func final_return(check_result):
 		
 
 func reset_code():
+	print("reset")
 	for node in get_children():
 		node.queue_free()
 	current_code = []
@@ -115,24 +117,23 @@ func reset_code():
 
 func _input(event):
 	if is_playing_result == false and get_parent().visible:
-		if Input.is_key_pressed(KEY_0):
+		if Input.is_action_just_pressed("0"):
 			add_number(0)
-			print("hey")
-		elif Input.is_key_pressed(KEY_1):
+		elif Input.is_action_just_pressed("1"):
 			add_number(1)
-		elif Input.is_key_pressed(KEY_2):
+		elif Input.is_action_just_pressed("2"):
 			add_number(2)
-		elif Input.is_key_pressed(KEY_3):
+		elif Input.is_action_just_pressed("3"):
 			add_number(3)
-		elif Input.is_key_pressed(KEY_4):
+		elif Input.is_action_just_pressed("4"):
 			add_number(4)
-		elif Input.is_key_pressed(KEY_5):
+		elif Input.is_action_just_pressed("5"):
 			add_number(5)
-		elif Input.is_key_pressed(KEY_6):
+		elif Input.is_action_just_pressed("6"):
 			add_number(6)
-		elif Input.is_key_pressed(KEY_7):
+		elif Input.is_action_just_pressed("7"):
 			add_number(7)
-		elif Input.is_key_pressed(KEY_8):
+		elif Input.is_action_just_pressed("8"):
 			add_number(8)
-		elif Input.is_key_pressed(KEY_9):
+		elif Input.is_action_just_pressed("9"):
 			add_number(9)

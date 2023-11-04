@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=1]
 [ext_resource path="res://scr/ui/crt/ctr_fx.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://asset/sfx/roll.wav" type="AudioStream" id=22]
 [ext_resource path="res://scr/level/first_start/npc_light.gd" type="Script" id=23]
 [ext_resource path="res://scr/ui/stage_indicator.gd" type="Script" id=24]
+[ext_resource path="res://asset/sfx/song_readjusted.wav" type="AudioStream" id=25]
 
 [sub_resource type="Animation" id=40]
 length = 0.001
@@ -261,6 +262,9 @@ tracks/1/keys = {
 
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 16, 7 )
+
+[sub_resource type="CircleShape2D" id=52]
+radius = 136.004
 
 [sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 9.5, 6 )
@@ -627,6 +631,11 @@ bus = "reverb_bus"
 stream = ExtResource( 8 )
 volume_db = -15.0
 
+[node name="can_see" type="Area2D" parent="monster_rel/monster"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="monster_rel/monster/can_see"]
+shape = SubResource( 52 )
+
 [node name="door_open" type="AudioStreamPlayer2D" parent="monster_rel"]
 position = Vector2( 305, 100 )
 stream = ExtResource( 14 )
@@ -687,5 +696,11 @@ anims/normla = SubResource( 50 )
 anims/RESET = SubResource( 48 )
 anims/lightflick = SubResource( 51 )
 anims/npc_move = SubResource( 47 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -8.0
+autoplay = true
+bus = "reverb_bus"
 
 [connection signal="finished" from="monster_rel/monster/walking_sound" to="monster_rel/monster" method="_on_walking_sound_finished"]

@@ -44,6 +44,7 @@ __meta__ = {
 }
 
 [node name="code_reciever" type="CanvasLayer" parent="."]
+layer = 0
 visible = false
 script = ExtResource( 10 )
 
@@ -62,8 +63,9 @@ spr_gap = 20
 numbersheet = ExtResource( 6 )
 
 [node name="picture" type="CanvasLayer" parent="."]
-visible = false
+layer = 0
 script = ExtResource( 8 )
+max_frame = 5
 
 [node name="dim" type="Sprite" parent="picture"]
 texture = ExtResource( 3 )
@@ -105,7 +107,7 @@ shape = SubResource( 2 )
 occluder = SubResource( 3 )
 
 [node name="code_receiever" type="Area2D" parent="."]
-position = Vector2( 186, 91 )
+position = Vector2( 222, 87 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -133,4 +135,4 @@ shape = SubResource( 5 )
 occluder = SubResource( 6 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 12 )]
-position = Vector2( 171, 161 )
+position = Vector2( 163, 138 )

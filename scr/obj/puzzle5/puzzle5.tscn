@@ -1,0 +1,400 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://scr/obj/puzzle1/basicpuzzle.gd" type="Script" id=1]
+[ext_resource path="res://asset/level/mockup_room.png" type="Texture" id=2]
+[ext_resource path="res://asset/obj/puzzle/puzzle5/order_statue.png" type="Texture" id=3]
+[ext_resource path="res://scr/obj/puzzle5/assembler.gd" type="Script" id=4]
+[ext_resource path="res://scr/obj/puzzle5/interactor1.gd" type="Script" id=5]
+[ext_resource path="res://scr/obj/puzzle2/picture.gd" type="Script" id=6]
+[ext_resource path="res://scr/obj/prop/regular_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scr/obj/panel_activator.gd" type="Script" id=8]
+[ext_resource path="res://asset/obj/puzzle/puzzle5/ordering_press_hint.png" type="Texture" id=9]
+[ext_resource path="res://asset/obj/puzzle/code_number/dithering_dim.png" type="Texture" id=10]
+[ext_resource path="res://asset/obj/puzzle/puzzle2/comic_book.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "wrong"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 2, 0, 2, 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.5, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9.5, 6.5 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 0, 6, 17, 6, 17, 19, 0, 19 )
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "wrong"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 2, 0, 2, 0 ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "wrong"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 2, 0, 2, 0 ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "wrong"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 2, 0, 2, 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 10.5, 9 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 6, 4 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+polygon = PoolVector2Array( -6, -5, -6, 3, 6, 3, 6, -5 )
+
+[node name="puzzle5" type="Node2D"]
+script = ExtResource( 1 )
+puzzle_num = 5
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="interactor1" type="Area2D" parent="."]
+position = Vector2( 208, 113 )
+collision_layer = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+number = 1
+assembler_node = NodePath("../assembler")
+
+[node name="Sprite" type="Sprite" parent="interactor1"]
+light_mask = 2
+position = Vector2( -9, -11 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="interactor1/Sprite"]
+anims/RESET = SubResource( 5 )
+anims/wrong = SubResource( 6 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="interactor1"]
+position = Vector2( -9, -11 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor1/StaticBody2D2"]
+position = Vector2( 8.5, 12.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor1"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactor1"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="interactor1"]
+position = Vector2( -9, -11 )
+occluder = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="interactor1"]
+
+[node name="interactor2" type="Area2D" parent="."]
+position = Vector2( 147, 205 )
+collision_layer = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+number = 2
+assembler_node = NodePath("../assembler")
+
+[node name="Sprite" type="Sprite" parent="interactor2"]
+light_mask = 2
+position = Vector2( -9, -11 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="interactor2/Sprite"]
+anims/RESET = SubResource( 16 )
+anims/wrong = SubResource( 17 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="interactor2"]
+position = Vector2( -9, -11 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor2/StaticBody2D2"]
+position = Vector2( 8.5, 12.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor2"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactor2"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="interactor2"]
+position = Vector2( -9, -11 )
+occluder = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="interactor2"]
+
+[node name="interactor3" type="Area2D" parent="."]
+position = Vector2( 55, 88 )
+collision_layer = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+number = 3
+assembler_node = NodePath("../assembler")
+
+[node name="Sprite" type="Sprite" parent="interactor3"]
+light_mask = 2
+position = Vector2( -9, -11 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="interactor3/Sprite"]
+anims/RESET = SubResource( 18 )
+anims/wrong = SubResource( 19 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="interactor3"]
+position = Vector2( -9, -11 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor3/StaticBody2D2"]
+position = Vector2( 8.5, 12.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor3"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactor3"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="interactor3"]
+position = Vector2( -9, -11 )
+occluder = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="interactor3"]
+
+[node name="interactor4" type="Area2D" parent="."]
+position = Vector2( 251, 113 )
+collision_layer = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+number = 4
+assembler_node = NodePath("../assembler")
+
+[node name="Sprite" type="Sprite" parent="interactor4"]
+light_mask = 2
+position = Vector2( -9, -11 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="interactor4/Sprite"]
+anims/RESET = SubResource( 20 )
+anims/wrong = SubResource( 21 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="interactor4"]
+position = Vector2( -9, -11 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor4/StaticBody2D2"]
+position = Vector2( 8.5, 12.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactor4"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactor4"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="interactor4"]
+position = Vector2( -9, -11 )
+occluder = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="interactor4"]
+
+[node name="assembler" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 120, 98 )
+
+[node name="picture" type="CanvasLayer" parent="."]
+layer = 0
+visible = false
+script = ExtResource( 6 )
+max_frame = 3
+
+[node name="dim" type="Sprite" parent="picture"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="picture"]
+texture = ExtResource( 9 )
+centered = false
+hframes = 4
+
+[node name="picture_activator" type="Area2D" parent="."]
+position = Vector2( 144, 141 )
+collision_layer = 0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+target = NodePath("../picture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="picture_activator"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 13 )
+
+[node name="ComicBook" type="Sprite" parent="picture_activator"]
+light_mask = 2
+position = Vector2( -9, -20 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="picture_activator"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="picture_activator/StaticBody2D"]
+position = Vector2( 0, -1 )
+shape = SubResource( 14 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="picture_activator"]
+occluder = SubResource( 15 )

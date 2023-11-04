@@ -7,6 +7,8 @@ var motion = Vector2.ZERO
 
 func move(dir):
 	
+	$AudioStreamPlayer.play()
+	
 	match dir:
 		"r":
 			direction = Vector2.LEFT
