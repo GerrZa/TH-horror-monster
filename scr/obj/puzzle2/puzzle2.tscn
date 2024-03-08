@@ -64,7 +64,6 @@ numbersheet = ExtResource( 6 )
 
 [node name="picture" type="CanvasLayer" parent="."]
 layer = 0
-visible = false
 script = ExtResource( 8 )
 max_frame = 5
 

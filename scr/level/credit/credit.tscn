@@ -21,7 +21,6 @@ stream = ExtResource( 3 )
 volume_db = -10.0
 
 [node name="programmer" type="Node2D" parent="."]
-visible = false
 
 [node name="Label" type="Label" parent="programmer"]
 margin_right = 320.0
@@ -30,10 +29,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Programming
 
 
-Programming - TrizG(Thanapatr P.)
-
-System designing - Ramida (Ploy)
-System designing - Pakkapon (o2)"
+Programming - TrizG(Thanapatr P.)"
 align = 1
 valign = 1
 

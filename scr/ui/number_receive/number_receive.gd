@@ -37,10 +37,10 @@ func add_number(number):
 
 
 func check_code():
-	for item in valid_code:
-		if !current_code.has(item): return false
-		if current_code.count(item) != valid_code.count(item): return false
-	return true
+	if current_code == valid_code:
+		return true
+	else:
+		return false
 	
 
 func final_return(check_result):
